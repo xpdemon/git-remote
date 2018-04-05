@@ -2,21 +2,30 @@
 
 public class SecretSentence
 {
-    private String animals = "Lapin";
-    private String place = "Carotte";
+
     private String sentence;
+    private String bestiole;
+    private String places;
 
-    public String getAnimals()
+    public String getPlaces()
     {
-        return animals;
+        return places;
     }
 
-    public String getPlace()
+    public void setPlaces(String places)
     {
-
-        return place;
+        this.places = places;
     }
 
+    public String getBestiole()
+    {
+        return bestiole;
+    }
+
+    public void setBestiole(String bestiole)
+    {
+        this.bestiole = bestiole;
+    }
 
     public  String getSentence()
     {
@@ -29,9 +38,10 @@ public class SecretSentence
     }
 
 
-    public  String writeSecretSentence(String animals, String place)
+    private  String writeSecretSentence(String animals, String place)
     {
-        setSentence(getAnimals()+ " s'incline face à "+ getPlace());
+
+        setSentence(animals+ " s'incline face à "+ place);
 
         return getSentence();
     }
@@ -42,7 +52,9 @@ public class SecretSentence
     {
 
         SecretSentence phrase = new SecretSentence();
-        System.out.println(phrase.writeSecretSentence(phrase.getAnimals(),phrase.getPlace()));
+        phrase.setBestiole("Poulet");
+        phrase.setPlaces("Cochon");
+        System.out.println(phrase.writeSecretSentence(phrase.getBestiole(),phrase.getPlaces()));
     }
 }
 
